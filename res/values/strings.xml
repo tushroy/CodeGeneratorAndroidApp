@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Code Generator</string>
+    <string name="enter_secret_prompt">Enter your facebook secret key:</string>
+    <string name="error_empty_secret">Cannot save empty secret</string>
+    <string name="enter_key_too_short">Key value is too short</string>
+    <string name="enter_key_illegal_char">Key value has illegal character</string>
+    <string name="enter_key_hint">Enter your key</string>
+    <string name="secret_saved">Secret saved</string>
+    <string name="type_prompt">Type of key</string>
+    <string name="save_btn">Save Key</string>
+    <string name="scan_qr">Scan QR</string>
+    <string name="facebook_directions">Open your facebook account on your personal computer.\nGo to this link \nhttp://on.fb.me/1dTEf8n or\nhttp://is.gd/codegen \nand setup code generator.\nUse the secret key from facebook to Add Secret in the Code Generator app.</string>
+    <string name="app_fb_description">Code Generator is a time based code generation app for faceboook. It creates a unique login code every 30 seconds, even when you aren\'t connected to the internet, so you always have a code when you need one. If you have login approvals turned on, you can use Code Generator instead of waiting for a text message with your login code.</string>
+    <string name="about_msg">Coded with love at \nCodemonkey Labs \nby Tushar Roy</string>
+    
+    <string-array name="type">
+        <item>Time based</item>
+        <item>Counter based</item>
+    </string-array>
+
+</resources>

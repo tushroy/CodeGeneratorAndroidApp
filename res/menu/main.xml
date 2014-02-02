@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/add_edit_key_menu"
+        android:title="Add or Edit Key"/>
+    <item
+        android:id="@+id/delete_secret"
+        android:title="Delete Key"/>
+    <item
+        android:id="@+id/sync_time_menu"
+        android:title="Sync Time"/>
+    <item
+        android:id="@+id/about_menu"
+        android:title="About App"/>
+
+</menu>
