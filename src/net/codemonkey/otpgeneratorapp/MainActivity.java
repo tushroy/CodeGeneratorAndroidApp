@@ -53,10 +53,10 @@ public class MainActivity extends Activity {
 		// getting preferences
 		mPrefs = this.getSharedPreferences(this.getPackageName(),
 				Context.MODE_PRIVATE);
-		mSecret = mPrefs.getString("secret", null);
+		mSecret = mPrefs.getString("secret", "");
 		mTimeCorrection = mPrefs.getInt("timecorrection", 0);
 		mOtpType = OtpType.getEnum(mPrefs.getInt("type", 0));
-
+		
 		if (mSecret.contentEquals("") || mSecret == null) {
 			startEnterKeyActivity();
 			setContentView(R.layout.key_not_set);
@@ -86,8 +86,8 @@ public class MainActivity extends Activity {
 			// get approx decrement rate of progress
 			approxDecrementRate = (100L / codeChangeIntervalSecs);
 
-			// Concentrate on this line
-			tSwitcherPin.setText(getPinCode(mSecret, mOtpType, 1));
+			// Move to onResume
+			//tSwitcherPin.setText(getPinCode(mSecret, mOtpType, 1));
 
 			mProgressBar = (ProgressBar) findViewById(R.id.time_remaining_progressBar);
 			
@@ -126,6 +126,14 @@ public class MainActivity extends Activity {
 		}
 	}
 	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		if(tSwitcherPin!=null){
+			tSwitcherPin.setText(getPinCode(mSecret,mOtpType, 1));
+		}
+	}
+
 	private long getClockProgressPercent() {
 		//return clock progress percentage in long
 		return ((100L * mOtpProvider.getSecondsTillNextCounterValue()) / codeChangeIntervalSecs);
