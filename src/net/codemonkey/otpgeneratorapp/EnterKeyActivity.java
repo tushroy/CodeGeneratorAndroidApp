@@ -1,14 +1,12 @@
 package net.codemonkey.otpgeneratorapp;
 
 import java.io.IOException;
-
 import net.tushar.util.otp.Base32String;
 import net.tushar.util.otp.Base32String.DecodingException;
 import net.tushar.util.otp.NetworkTimeProvider;
 import net.tushar.util.otp.OtpType;
-
 import org.apache.http.impl.client.DefaultHttpClient;
-
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -202,9 +200,8 @@ public class EnterKeyActivity extends Activity implements TextWatcher {
 									Uri.parse("market://search?q=pname:com.google.zxing.client.android"));
 							try {
 								startActivity(intent);
-							} catch (ActivityNotFoundException e) { // if no
-																	// Market
-																	// app
+							} catch (ActivityNotFoundException e) {
+								//if no market app
 								intent = new Intent(
 										Intent.ACTION_VIEW,
 										Uri.parse("https://zxing.googlecode.com/files/BarcodeScanner3.1.apk"));
@@ -219,6 +216,7 @@ public class EnterKeyActivity extends Activity implements TextWatcher {
 
 	}
 
+	@SuppressLint("DefaultLocale")
 	private void interpretScanResult(Uri scanResult) {
 		final String SECRET_PARAM = "secret";
 		final String OTP_SCHEME = "otpauth";

@@ -58,14 +58,13 @@ public class MainActivity extends Activity {
 		mOtpType = OtpType.getEnum(mPrefs.getInt("type", 0));
 		
 		if (mSecret.contentEquals("") || mSecret == null) {
-			startEnterKeyActivity();
+			//startEnterKeyActivity();
 			setContentView(R.layout.key_not_set);
 		} else {
 			setContentView(R.layout.activity_main);
 
-			// Text Switcher Animation
-			tSwitcherPin = (TextSwitcher) findViewById(R.id.tsPincode); // init
-																		// TextSwitcher
+			// Text Switcher Animation, init TextSwitcher
+			tSwitcherPin = (TextSwitcher) findViewById(R.id.tsPincode); 
 			tSwitcherPin.setInAnimation(this, android.R.anim.slide_in_left);
 			tSwitcherPin.setOutAnimation(this, android.R.anim.slide_out_right);
 			TextView tv1 = new TextView(this);
